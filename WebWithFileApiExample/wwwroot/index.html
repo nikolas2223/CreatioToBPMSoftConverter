@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <title>Package converter</title>
+</head>
+<body>
+    <h1>Convert Creatio package to BPMSoft</h1>
+    <form action="api/File/PostFile"
+          enctype="multipart/form-data" onsubmit="return false;"
+          method="post" id="FileUpload_Form">
+
+        <label for="FileUpload_FormFile">
+            <span class="base-button select-button" aria-hidden="true" id="selectionSpan">select package</span>
+            <input id="FileUpload_FormFile" type="file" accept=".gz" name="sendedFile" hidden />
+        </label>
+        <br />
+        <label for="FileUpload_Button">
+            <span class="base-button upload-button">convert</span>
+            <input id="FileUpload_Button" type="submit" value="Upload" hidden />
+        </label>
+
+        <div style="margin-top:15px">
+            <output name="result"></output>
+        </div>
+    </form>
+    <p>
+        By <span>n.filatov</span>
+    </p>
+
+    <div class="bodymask" id="bodyMask">
+        <div class="loader-wrapper">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <script src="app/main.js" type="module"></script>
+</body>
+</html>
